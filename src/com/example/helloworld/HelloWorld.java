@@ -30,19 +30,31 @@ public class HelloWorld {
         int red = ((color >> 16) & binaryMask);
         // TODO pad to print eight bits
         String redBinary = Integer.toBinaryString(red);
-        System.out.println("Red: " + red + " Binary: " + redBinary);
+        String redHex = Integer.toHexString(red);
+        System.out.println("Red: " + red + " Binary: " + redBinary +
+                " Hex: " + redHex);
 
         // Shift 8 bits to the right, and then binary AND to obtain 8 bits for green
         int green = ((color >> 8) & binaryMask);
         String greenBinary = Integer.toBinaryString(green);
-        System.out.println("Green: " + green + " Binary: " + greenBinary);
+        String greenHex = Integer.toHexString(green);
+        System.out.println("Green: " + green + " Binary: " + greenBinary +
+                " Hex: " + greenHex);
 
         // Binary AND to obtain 8 bits representing blue
         int blue = color & binaryMask;
         String blueBinary = Integer.toBinaryString(blue);
-        System.out.println("Blue: " + blue + " Binary: " + blueBinary);
+        String blueHex = Integer.toHexString(blue);
+        System.out.println("Blue: " + blue + " Binary: " + blueBinary +
+                " Hex: " + blueHex);
 
-
+        int n = 11;
+        // n AND a mask containing a one in position I want to keep
+        // the mask is just a one shifted three bits to the left
+        // then when the only active bit is the one I want, the fourth,
+        // shift three positions to the right
+        int fourthBitFromRight = (n & (1 << 3)) >> 3;
+        System.out.println("fourthBitFromRight: " + fourthBitFromRight);
 
 //        int num = 0b1110;
 //        int mask = 0b0011;
