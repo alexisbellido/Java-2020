@@ -12,6 +12,13 @@ public class Simple {
         // this is possible thanks to import static
         System.out.println(pow(3, 4));
 
+        double original = 3.53;
+        int justInt = (int) original;
+        System.out.println(justInt);
+
+        // to round to nearest integer
+        int nearestInt = (int) Math.round(original);
+        System.out.println(nearestInt);
 
     }
 }
