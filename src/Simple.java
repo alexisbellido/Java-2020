@@ -27,7 +27,7 @@ public class Simple {
         System.out.printf("%s %s %s%n", letters[0], letters[1], letters[2]);
 
         String miniAlpha = new String(letters);
-        System.out.println(miniAlpha);
+        System.out.println(miniAlpha); // test
 
 
     }
