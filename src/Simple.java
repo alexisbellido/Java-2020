@@ -4,6 +4,10 @@ public class Simple {
 
     enum Size {SMALL, MEDIUM, LARGE};
 
+    public void sayHello(String name) {
+        System.out.println("Hello " + name);
+    }
+
     public static void main(String[] args) {
         double x = 4;
         double y = sqrt(x);

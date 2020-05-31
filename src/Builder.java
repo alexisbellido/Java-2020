@@ -43,6 +43,10 @@ public class Builder {
         builder.betterPalindrome();
 
         System.out.printf("%tc %n", new Date());
+
+        // cannot access Simple class in Simple.java just yet, even if it's in same directory
+        //Simple s = new Simple();
+        //s.sayHello("Toby");
     }
 
     void simplePalindrome() {
