@@ -1,11 +1,28 @@
-public class StringBuilderPlay {
+import java.util.Date;
+
+public class Builder {
+
+    private int sum(int a, int b) {
+        return a + b;
+    }
+
+
+    static int multiply(int x, int y) {
+        // a static method to reference from static method main
+        return x * y;
+    }
 
     public static void main(String[] args) {
         System.out.println("Testing");
-        Helper hp = new Helper();
         int num1 = 5;
         int num2 = 7;
-        System.out.println(hp.sum(num1, num2));
+
+        // it's fine to create an instance of the Builder class inside the Builder's class main
+        // method for testing because it is a static method
+        Builder builder = new Builder();
+        // it's also better to call instance methods like this
+        System.out.println(builder.sum(num1, num2));
+        // than declaring static methods to call via the class like this
         System.out.println(multiply(num1, num2));
 
         // create empty build, default capacity 16
@@ -22,12 +39,13 @@ public class StringBuilderPlay {
         String reverseWord = sb.toString().toUpperCase();
         System.out.println(reverseWord);
 
-        simplePalindrome();
-        betterPalindrome();
+        builder.simplePalindrome();
+        builder.betterPalindrome();
 
+        System.out.printf("%tc %n", new Date());
     }
 
-    static void simplePalindrome() {
+    void simplePalindrome() {
         String palindrome = "Dot saw I was Tod";
         int len = palindrome.length();
         char[] tempCharArray = new char[len];
@@ -52,7 +70,7 @@ public class StringBuilderPlay {
         System.out.println("= Reverse: " + reversePalindrome);
     }
 
-    static void betterPalindrome() {
+    void betterPalindrome() {
         String palindrome = "Dot saw I was Tod";
         StringBuilder sb = new StringBuilder(palindrome);
         sb.reverse();
@@ -60,16 +78,4 @@ public class StringBuilderPlay {
         System.out.println("== Reverse: " + sb);
     }
 
-    static int multiply(int x, int y) {
-        // should be static to reference it from static method main
-        return x * y;
-    }
-
-}
-
-class Helper {
-    // just for testing, there should be just one class per file
-    int sum(int a, int b) {
-        return a + b;
-    }
 }
